@@ -14,9 +14,15 @@ body{
 	flex-direction: column;
 }
 
+.button-center{
+	display: flex;
+	justify-content: center;
+	grid-gap: 10px;
+}
+
 input{
 	height: 30px;
-	border: 1px solid black;
+	border: 2px solid black;
 	border-radius: 10px;
 	outline: none;
 	margin-bottom: 30px;
@@ -27,6 +33,7 @@ input{
 	margin-left: 30px;
 	position: relative;
 	font-size: 1.1em;
+
 }
 
 #player1info{
@@ -41,6 +48,7 @@ input{
 	display: flex;
 	height: 70px;
 	margin-bottom: 20px;
+	border-radius: 10px;
 }
 
 .result{
@@ -58,7 +66,6 @@ input{
 	padding-left: 10px;
 	padding-right: 10px; 
 }
-
 
 .gameboard{
 	display: grid;
@@ -104,10 +111,11 @@ input{
 	background: #eee;
 }
 
-#replay-btn{
+#replay-btn, #AI, #two-players, #AI-hard{
 	border: 2px solid black;
 	border-radius: 10px;
 	margin-top: 20px;
+	margin-bottom: 15px;
 	cursor: pointer;
 	font-size: 1.1em;
 	padding: 10px;
@@ -117,8 +125,11 @@ input{
 	letter-spacing: 1px;
 }
 
-#replay-btn:hover{
+#replay-btn:hover, #AI:hover, #two-players:hover, #AI-hard:hover{
 	background: white;
 	color: #1185b1;
-	font-weight: bolder;
+}
+
+#AI{
+	align-self:  center;
 }
