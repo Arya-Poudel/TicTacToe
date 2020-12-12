@@ -25,7 +25,8 @@ let displayController = (function(){
 		 	  player2 = players(name, 'O')
 	 });
 
-
+	  computerTurn =  false;
+	  smartComputerTurn = false;
 	 //select player
 	const AI = document.getElementById('AI');
 	AI.addEventListener('click', () => {
@@ -104,6 +105,8 @@ let game = (function(){
 			//display
 			gameCells[cellId].textContent = currentPlayer.move;
 			checkGameEnd(currentPlayer);
+			//swapturn
+			xmove = !xmove; 
 		}
 
 		//random AI
@@ -113,12 +116,12 @@ let game = (function(){
 				return gameBoard.filter(elements=>{
 					return elements == '';
 				})
-			}
+			};
 			function setComputerMove() {
 				while( gameBoard[computerMove] != ''  && getEmptyCells().length != 0){
 				    computerMove = Math.floor(Math.random() * 9)
 			    }
-			}
+			};
 			setComputerMove();
 			xmove = !xmove;
 			gameBoard[computerMove] = 'O';
@@ -178,10 +181,7 @@ let game = (function(){
 			}
 		return bestScore;
 		}
-	}
-			
-	//swapturn
-	xmove = !xmove; 				
+	}			
    };
 
    function checkGameEnd(currentPlayer){
@@ -194,7 +194,7 @@ let game = (function(){
 			displayController.displayResult(currentPlayer);
 			gameOn = false;
 		}
-    }
+    };
 
 	function checkWin(move){
 		let winCombinations = [
@@ -226,8 +226,6 @@ let game = (function(){
 
 
 	return{ 
-		replayGame,
-  		gameCells,
-  		gameBoard
+		replayGame, gameCells, gameBoard
     };
 })();
