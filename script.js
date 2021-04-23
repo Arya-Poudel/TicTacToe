@@ -2,6 +2,8 @@ const players = (name, move) => {
    return {name, move};
 };
 
+let computerTurn;
+let smartComputerTurn;
 
 let displayController = (function(){
 
@@ -49,6 +51,7 @@ let displayController = (function(){
 	const twoPlayers = document.getElementById('two-players');
 	twoPlayers.addEventListener('click', ()=>{
 		player2 = players('','O');
+		player2.name = 'Player2'; 
 		player2info.value = '';
 		computerTurn = false;
 		smartComputerTurn = false;
